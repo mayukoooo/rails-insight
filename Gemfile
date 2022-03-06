@@ -8,7 +8,8 @@ gem 'rails', '~> 6.1.4', '>= 6.1.4.6'
 # Use sqlite3 as the database for Active Record
 
 # gem 'sqlite3', '~> 1.4'
-gem 'mysql2'
+# バージョン8.0.28
+gem 'mysql2', '~>0.5.3'
 
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
@@ -47,3 +48,5 @@ gem 'active_model_serializers'
 group :production do
   gem 'unicorn', '5.4.1'
 end
+
+gem 'dotenv-rails'

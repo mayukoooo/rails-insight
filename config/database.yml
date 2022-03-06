@@ -7,16 +7,15 @@
 default: &default
   adapter: mysql2
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: insight
-  password: "GHYu478@"
-  timeout: 5000
-  database: insight_development
+  username: mayu
+  password: ENV['PASSWORD']
+  host: localhost
 
 development:
   <<: *default
   database: insight_development
-  username: insight
-  password:
+  username: mayu
+  password: ENV['PASSWORD']
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -28,5 +27,5 @@ test:
 production:
   <<: *default
   database: insight_production
-  username: insight
-  password: "GHYu478@"
+  username: mayu
+  password: ENV['PASSWORD']
