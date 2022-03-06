@@ -28,4 +28,6 @@ production:
   <<: *default
   database: insight_production
   username: mayu
-  password: ENV['PASSWORD']
+  # password: ENV['PASSWORD']
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
