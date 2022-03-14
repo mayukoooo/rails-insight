@@ -15,7 +15,8 @@ development:
   <<: *default
   database: insight_development
   username: mayu
-  password: ENV['PASSWORD']
+  password: <%= ENV['PASSWORD'] %>
+  # password: ENV['PASSWORD']
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -24,10 +25,10 @@ test:
   <<: *default
   database: insight_test
 
-production:
-  <<: *default
-  database: insight_production
-  username: mayu
-  # password: ENV['PASSWORD']
-  password: ENV['PASSWORD']
-  socket: /var/lib/mysql/mysql.sock
+# production:
+#   <<: *default
+#   database: insight_production
+#   username: root
+#   # password: ENV['PASSWORD']
+#   password: ENV['PASSWORD']
+#   socket: /var/lib/mysql/mysql.sock
