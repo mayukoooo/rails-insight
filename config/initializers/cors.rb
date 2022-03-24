@@ -6,21 +6,10 @@
 # Read more: https://github.com/cyu/rack-cors
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
-  # allow do
-  #   origins 'localhost:8080', 'https://www.insight-naisei.com'
-  #   resource '*',
-  #            headers: :any,
-  #            methods: %i[get post put patch delete options head]
-  # end
-
   allow do
-    if Rails.env.production?
-      origins 'https://www.insight-naisei.com'
-    else
-      origins 'localhost:8080'
-    end
+    origins 'localhost:8080', 'https://www.insight-naisei.com'
     resource '*',
-      headers: :any,
-      methods: [:get, :post, :put, :patch, :delete, :options, :head]
+             headers: :any,
+             methods: %i[get post put patch delete options head]
   end
 end
