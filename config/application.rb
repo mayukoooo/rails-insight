@@ -37,4 +37,8 @@ module Api
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
   end
+  config.action_dispatch.default_headers = {
+    'Access-Control-Allow-Origin' => '*',
+    'Access-Control-Request-Method' => %w{GET POST}.join(",")
+  } 
 end
