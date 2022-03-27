@@ -5,15 +5,12 @@ class V1::AnswersController < ApplicationController
   end
 
   def create
-    # answer = params[:answer].permit(:user_id, :question_id, :created_at, :updated_at)
-    # Answer.create(answer)
-    answer = Answer.new(answer_params)
+    @answer = Answer.new(answer_params)
     if answer.save
       render json: answer
     else
       render json: answer.errors
     end
-    # puts params
   end
 
   def destroy
@@ -24,8 +21,7 @@ class V1::AnswersController < ApplicationController
   private
 
   def answer_params
-    params.require(:answer)
+    params.require(:answer).permit(:user_id, :answer, :question_id)
   end
 
-  # .permit(:answer, :user_id, :question_id)
 end
